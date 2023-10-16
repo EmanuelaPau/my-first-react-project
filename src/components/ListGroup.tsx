@@ -6,7 +6,7 @@ function ListGroup() {
     { name: "London", id: "LND" },
     { name: "Paris", id: "PRS" },
   ];
-  //   items = [];
+  items = [];
 
   return (
     <>
@@ -14,6 +14,7 @@ function ListGroup() {
 
       {items.length === 0 ? <p>no item found</p> : null}
 
+      {items.length === 0 && <p>no item found</p>}
       <ul className="list-group">
         {items.map((item) => (
           <li key={item.id}>{item.name}</li>
