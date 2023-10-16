@@ -6,7 +6,6 @@ function ListGroup() {
     { name: "London", id: "LND" },
     { name: "Paris", id: "PRS" },
   ];
-  items = [];
 
   return (
     <>
@@ -16,8 +15,14 @@ function ListGroup() {
 
       {items.length === 0 && <p>no item found</p>}
       <ul className="list-group">
-        {items.map((item) => (
-          <li key={item.id}>{item.name}</li>
+        {items.map((item, index) => (
+          <li
+            className="list-group-item"
+            onClick={() => console.log("Clicked " + " " + item.name + index)}
+            key={item.id}
+          >
+            {item.name}
+          </li>
         ))}
       </ul>
     </>
